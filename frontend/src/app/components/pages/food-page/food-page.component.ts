@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FoodService } from 'src/app/services/food.service';
 import { Food } from 'src/app/shared/models/Food';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-food-page',
@@ -13,7 +14,9 @@ export class FoodPageComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private foodService: FoodService
+    private foodService: FoodService,
+    private cartService: CartService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -22,5 +25,10 @@ export class FoodPageComponent {
         this.food = this.foodService.getFoodByID(param['id']);
       }
     });
+  }
+
+  addToCart(): void {
+    this.cartService.addToCart(this.food);
+    this.router.navigateByUrl('/cart-page');
   }
 }
