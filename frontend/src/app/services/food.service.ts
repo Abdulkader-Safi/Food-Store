@@ -6,8 +6,6 @@ import { Food } from '../shared/models/Food';
   providedIn: 'root',
 })
 export class FoodService {
-  constructor() {}
-
   getAll(): Food[] {
     return sample_foods;
   }
@@ -16,5 +14,11 @@ export class FoodService {
     return this.getAll().filter((food) =>
       food.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+  }
+
+  getAllFoodsByTag(tag: string): Food[] {
+    return tag === 'All'
+      ? this.getAll()
+      : this.getAll().filter((food) => food.tags?.includes(tag));
   }
 }
