@@ -23,8 +23,8 @@ export class CartPageComponent {
     this.cartService.removeFromCart(cartItem.food.id);
   }
 
-  changeQuantity(cartitem: CartItem, quantityInString: string): void {
+  changeQuantity(cartItem: CartItem, quantityInString: string): void {
     const quantity = parseInt(quantityInString);
-    this.cartService.changeQuantity(cartitem.food.id, quantity);
+    this.cartService.changeQuantity(cartItem.food.id, quantity);
   }
 }
