@@ -13,6 +13,8 @@ export class TagsComponent {
   constructor(private tagService: TagService) {}
 
   ngOnInit(): void {
-    this.tags = this.tagService.getAllTags();
+    this.tagService.getAllTags().subscribe((tag) => {
+      this.tags = tag;
+    });
   }
 }
