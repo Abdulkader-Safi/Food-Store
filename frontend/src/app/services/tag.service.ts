@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
 import { FOOD_TAGS_URL } from '../shared/constants/urls';
 import { Tag } from '../shared/models/Tag';
 
