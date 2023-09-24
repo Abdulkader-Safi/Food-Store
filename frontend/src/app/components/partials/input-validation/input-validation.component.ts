@@ -12,12 +12,9 @@ const VALIDATORS_MESSAGES: any = {
   styleUrls: ['./input-validation.component.css'],
 })
 export class InputValidationComponent {
-  @Input()
-  control!: AbstractControl;
-  @Input()
-  showErrorsWhen: boolean = true;
+  @Input() control!: AbstractControl;
+  @Input() showErrorsWhen: boolean = true;
   errorMessages: string[] = [];
-  constructor() {}
 
   ngOnChanges(changes: SimpleChanges): void {
     this.checkValidation();

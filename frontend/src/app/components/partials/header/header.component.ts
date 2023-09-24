@@ -11,8 +11,8 @@ import { UserService } from '../../../services/user.service';
 })
 export class HeaderComponent {
   cartQuantity = 0;
-
   user!: User;
+
   constructor(
     private cartService: CartService,
     private userService: UserService

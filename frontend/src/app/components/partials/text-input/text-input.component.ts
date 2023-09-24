@@ -15,7 +15,4 @@ export class TextInputComponent {
   get formControl() {
     return this.control as FormControl;
   }
-  constructor() {}
-
-  ngOnInit(): void {}
 }
