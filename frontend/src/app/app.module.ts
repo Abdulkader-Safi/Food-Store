@@ -17,6 +17,10 @@ import { SearchComponent } from './components/partials/search/search.component';
 import { StarRatingComponent } from './components/partials/star-rating/star-rating.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
 import { TitleComponent } from './components/partials/title/title.component';
+import { InputContainerComponent } from './components/partials/input-container/input-container.component';
+import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
+import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
+import { TextInputComponent } from './components/partials/text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { TitleComponent } from './components/partials/title/title.component';
     TitleComponent,
     NotFoundComponent,
     LoginPageComponent,
+    InputContainerComponent,
+    DefaultButtonComponent,
+    InputValidationComponent,
+    TextInputComponent,
   ],
   imports: [
     BrowserModule,
