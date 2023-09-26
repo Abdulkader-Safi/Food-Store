@@ -1,9 +1,11 @@
+import bcrypt from "bcryptjs";
 import { Router } from "express";
 import asyncHandler from "express-async-handler";
 import jwt from "jsonwebtoken";
 
 import { sample_users } from "../Data";
-import { User, UserModel } from "../models/user.model";
+import { HTTP_BAD_REQUEST } from "../constants/http_status";
+import { User, UserModel, newUser } from "../models/user.model";
 
 const router = Router();
 
@@ -33,6 +35,30 @@ router.post(
       const BAD_REQUEST = 400;
       res.status(BAD_REQUEST).send("Username or password is invalid!");
     }
+  })
+);
+
+router.post(
+  "/register",
+  asyncHandler(async (req, res) => {
+    const { name, email, password, address } = req.body;
+    const user = await UserModel.findOne({ email });
+    if (user) {
+      res.status(HTTP_BAD_REQUEST).send("this email already registered!, please login");
+      return;
+    }
+
+    const encryptedPassword = await bcrypt.hash(password, 10);
+    const newUser: newUser = {
+      name,
+      email,
+      password: encryptedPassword,
+      address,
+      isAdmin: false,
+    };
+
+    const dbUser = await UserModel.create(newUser);
+    res.send(generateTokenResponse(dbUser));
   })
 );
 

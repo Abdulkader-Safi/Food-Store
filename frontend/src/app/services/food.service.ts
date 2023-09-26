@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import {
   FOODS_BY_SEARCH_URL,
   FOODS_BY_TAG_URL,
-  FOOD_BY_ID_URL,
-  FOOD_URL,
+  FOODS_URL,
+  FOOD_BY_ID_URL
 } from '../shared/constants/urls';
 import { Food } from '../shared/models/Food';
 
@@ -17,10 +17,10 @@ export class FoodService {
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Food[]> {
-    return this.http.get<Food[]>(FOOD_URL);
+    return this.http.get<Food[]>(FOODS_URL);
   }
 
-  getAllFoodsBySearchTerm(searchTerm: string): Observable<Food[]> {
+  getAllFoodsBySearchTerm(searchTerm: string) {
     return this.http.get<Food[]>(FOODS_BY_SEARCH_URL + searchTerm);
   }
 
@@ -30,7 +30,7 @@ export class FoodService {
       : this.http.get<Food[]>(FOODS_BY_TAG_URL + tag);
   }
 
-  getFoodByID(foodID: string): Observable<Food> {
-    return this.http.get<Food>(FOOD_BY_ID_URL + foodID);
+  getFoodById(foodId: string): Observable<Food> {
+    return this.http.get<Food>(FOOD_BY_ID_URL + foodId);
   }
 }

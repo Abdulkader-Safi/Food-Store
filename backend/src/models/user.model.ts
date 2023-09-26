@@ -9,6 +9,14 @@ export interface User {
   isAdmin: boolean;
 }
 
+export interface newUser {
+  email: string;
+  password: string;
+  name: string;
+  address: string;
+  isAdmin: boolean;
+}
+
 export const UserSchema = new Schema<User>(
   {
     name: { type: String, required: true },

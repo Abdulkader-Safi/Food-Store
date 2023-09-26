@@ -21,6 +21,7 @@ import { InputContainerComponent } from './components/partials/input-container/i
 import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
 import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
+import { RegisterPgeComponent } from './components/pages/register-pge/register-pge.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { TextInputComponent } from './components/partials/text-input/text-input.
     DefaultButtonComponent,
     InputValidationComponent,
     TextInputComponent,
+    RegisterPgeComponent,
   ],
   imports: [
     BrowserModule,
