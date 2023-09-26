@@ -24,6 +24,8 @@ import { TagsComponent } from './components/partials/tags/tags.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
+import { OrderItemsListComponent } from './components/partials/order-items-list/order-items-list.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     TextInputComponent,
     RegisterPgeComponent,
     LoadingComponent,
+    CheckoutPageComponent,
+    OrderItemsListComponent,
   ],
   imports: [
     BrowserModule,
