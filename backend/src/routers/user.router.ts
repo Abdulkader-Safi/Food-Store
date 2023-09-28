@@ -27,13 +27,12 @@ router.post(
   "/login",
   asyncHandler(async (req, res) => {
     const { email, password } = req.body;
-    const user = await UserModel.findOne({ email, password });
+    const user = await UserModel.findOne({ email });
 
-    if (user) {
+    if (user && (await bcrypt.compare(password, user.password))) {
       res.send(generateTokenResponse(user));
     } else {
-      const BAD_REQUEST = 400;
-      res.status(BAD_REQUEST).send("Username or password is invalid!");
+      res.status(HTTP_BAD_REQUEST).send("Username or password is invalid!");
     }
   })
 );
@@ -44,14 +43,15 @@ router.post(
     const { name, email, password, address } = req.body;
     const user = await UserModel.findOne({ email });
     if (user) {
-      res.status(HTTP_BAD_REQUEST).send("this email already registered!, please login");
+      res.status(HTTP_BAD_REQUEST).send("User is already exist, please login!");
       return;
     }
 
     const encryptedPassword = await bcrypt.hash(password, 10);
+
     const newUser: newUser = {
       name,
-      email,
+      email: email.toLowerCase(),
       password: encryptedPassword,
       address,
       isAdmin: false,
@@ -61,7 +61,6 @@ router.post(
     res.send(generateTokenResponse(dbUser));
   })
 );
-
 const generateTokenResponse = (user: User) => {
   const token = jwt.sign(
     {
