@@ -28,6 +28,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import { TitleComponent } from './components/partials/title/title.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     CheckoutPageComponent,
     OrderItemsListComponent,
     MapComponent,
+    PaymentPageComponent,
   ],
   imports: [
     BrowserModule,
