@@ -29,7 +29,7 @@ export class CheckoutPageComponent {
   ngOnInit(): void {
     const cart = this.cartService.getCart();
     this.order.items = cart.items;
-    this.order.totalPrice = cart.totalCount;
+    this.order.totalPrice = cart.totalPrice;
 
     let { name, address } = this.userService.currentUser;
     this.checkoutForm = this.formBuilder.group({
