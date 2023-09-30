@@ -113,7 +113,7 @@ export class MapComponent {
     console.log(this.order.addressLatLng);
   }
 
-  get addressLatLng(){
+  get addressLatLng() {
     return this.order.addressLatLng!;
   }
 }

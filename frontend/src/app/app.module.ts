@@ -29,6 +29,7 @@ import { TextInputComponent } from './components/partials/text-input/text-input.
 import { TitleComponent } from './components/partials/title/title.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
+import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
     OrderItemsListComponent,
     MapComponent,
     PaymentPageComponent,
+    PaypalButtonComponent,
   ],
   imports: [
     BrowserModule,
