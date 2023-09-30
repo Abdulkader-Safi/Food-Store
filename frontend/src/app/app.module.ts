@@ -30,6 +30,8 @@ import { TitleComponent } from './components/partials/title/title.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
+import { OtderTackPageComponent } from './components/pages/otder-tack-page/otder-tack-page.component';
+import { OrderTackPageComponent } from './components/pages/order-tack-page/order-tack-page.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
     MapComponent,
     PaymentPageComponent,
     PaypalButtonComponent,
+    OtderTackPageComponent,
+    OrderTackPageComponent,
   ],
   imports: [
     BrowserModule,
